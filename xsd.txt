@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001">
+<xs:element name="">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+
+
+
+
+(index.php)
+$.ajax({
+	url://localhost/system_data/students.json,
+	type:"get",
+	dataType:"json",
+	succcess:function(e){
+		var html = ''
+		$(e).each(funciton(f,x){
+			html+='<tr>'
+				html+='<td>'+x.name+'</td>'
+				html+='<td>'+x.age+'</td>'
+				html+='<td>'+x.address+'</td>'
+			html+='</tr>'
+		})
+		$('tbody').html(html)
+	}
+})
